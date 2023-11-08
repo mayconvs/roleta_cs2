@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>mayconvs - Roleta de Sorteio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/roleta.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="content">
+        <h1>Roleta de Sorteio de MIX</h1>
+        <div class="row align_center gap2">
+            <div class="column ">
+                <div class="div_textarea column">
+                    <p id="cont_player">0 players</p>
+                    <textarea name="players" id="players" cols="30" rows="10"
+                        onkeyup="attCountPlayers(this.value)"></textarea>
+                    <button id="adicionar" class="botoes adicionar">Adicionar</button>
+                </div>
+            </div>
+            <div class="column align_center">
+                <div id="mainbox" class="mainbox">
+                    <div id="box" class="box">
+                        <div id="box1" class="box1">
+                            <span class="font span1">
+                                <h5>Player 1</h5>
+                            </span>
+                            <span class="font span2">
+                                <h5>Player 2</h5>
+                            </span>
+                            <span class="font span3">
+                                <h5>Player 3</h5>
+                            </span>
+                            <span class="font span4">
+                                <h5>Player 4</h5>
+                            </span>
+                            <span class="font span5">
+                                <h5>Player 5</h5>
+                            </span>
+                        </div>
+                        <div id="box2" class="box2">
+                            <span class="font span1">
+                                <h5>Player 6</h5>
+                            </span>
+                            <span class="font span2">
+                                <h5>Player 7</h5>
+                            </span>
+                            <span class="font span3">
+                                <h5>Player 8</h5>
+                            </span>
+                            <span class="font span4">
+                                <h5>Player 9</h5>
+                            </span>
+                            <span class="font span5">
+                                <h5>Player 10</h5>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <button id="sortear" class="spin botoes sortear" onclick="if (time1.length == 5 && time2.length == 5) {Swal.fire({
+                    title: 'Times já sorteados',
+                    icon: 'error',
+                    //text: '',
+                })} else {sortear(this)}">Sortear</button>
+            </div>
+            <div class="column">
+                <div class="listas">
+                    <div id="lista1" class="lista lista1">
+                        <h2 class="time t1">Time 1</h2>
+                        <ol id="time1">
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                        </ol>
+                    </div>
+                    <div id="lista2" class="lista lista2">
+                        <h2 class="time t2">Time 2</h2>
+                        <ol id="time2">
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                            <li>Player</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <audio id="applause" controls="controls" src="./assets/applause.mp3" type="audion/mp3">
+        </audio>
+
+        <audio id="whell" controls="controls" src="./assets/wheel2.mp3" type="audion/mp3">
+        </audio>
+
+        <audio id="bixa_detectada" controls="controls" src="./assets/bixa_detectada.mp3" type="audion/mp3">
+        </audio>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script id="scriptIndex" class="scripts" src="./js/index.js"></script>
+
+</body>
+
+</html>

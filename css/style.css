@@ -1,0 +1,503 @@
+@import url('./reset.css');
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-image: url('../img/header_bg.svg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    color: #474445;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align_center {
+    display: flex;
+    align-items: center;
+}
+
+.justify_center {
+    display: flex;
+    justify-content: center;
+}
+
+.gap2 {
+    gap: 2rem;
+}
+
+.div_inputs {
+    background-color: rgba(0, 0, 0, 0.15);
+    width: fit-content;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.15rem;
+
+}
+
+.inputs {
+    background: none;
+    font-size: 1rem;
+    font-family: 'poppins', sans-serif;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    max-width: 422px;
+}
+
+.botoes {
+    height: 2rem;
+    border: none;
+    font-size: 1rem;
+    font-family: 'poppins', sans-serif;
+    cursor: pointer;
+    background-color: #3281ac;
+    color: rgba(255, 255, 255, .9333333333);
+    padding: 0rem 1rem;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.botoes:hover {
+    background-color: rgba(255, 255, 255, .18);
+    color: #3281ac;
+    border: 1px solid #3281ac;
+}
+
+.botoes.sortear {
+    width: 16rem;
+    height: 4rem;
+}
+
+.botoes.sortear:disabled {
+    background: #888888;
+    color: #535353;
+}
+
+.botoes.sortear:disabled:hover {
+    background: #888888;
+    color: #535353;
+    border: none;
+}
+
+.botoes.adicionar {
+    width: 100%;
+    height: 4rem;
+}
+
+.roleta-botao {
+    display: flex;
+    flex: column;
+    align-items: center;
+}
+
+/* .roleta {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: conic-gradient(#5da5da 0% 50%);
+    margin: 2rem;
+    background: conic-gradient(#5da5da 0% 50%, #faa43a 50% 60%, #b276b2 60% 70%, #decf3f 70% 80%, #f15854 80% 90%, #4d4d4d 90% 100%);
+} */
+
+.lista {
+    background-color: rgba(0, 0, 0, 0.15);
+    margin: 2rem;
+    padding: 1rem;
+
+}
+
+.lista h2 {
+    background-color: rgba(0, 0, 0, 0.15);
+
+    width: 20rem;
+}
+
+.lista ol {
+    margin: 1rem;
+}
+
+.time {
+    padding: 1rem;
+}
+
+h2.t1 {
+    background-color: #E30016;
+}
+
+h2.t2 {
+    background-color: #0097E3;
+}
+
+ol li {
+    padding: 0.25rem;
+}
+
+
+/*Roleta*/
+.folha {
+    position: relative;
+    background-color: transparent;
+    width: 600px;
+    height: 600px;
+    padding: 50px;
+}
+
+.roleta {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: white;
+    transition: all 1s ease;
+    font-family: poppins, sans-serif;
+    overflow: hidden;
+    box-shadow: 6px 6px 12px 1px rgba(0, 0, 0, 0.3);
+    border: 10px solid #FFF;
+    animation-name: rodar;
+    animation-duration: 4s;
+}
+
+.pizza-slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.pizza-slice p {
+    margin-left: 12px;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.seta {
+    position: absolute;
+    left: 48.5%;
+    border-bottom: 0px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #474445;
+    width: 0;
+    height: 0;
+    z-index: 999;
+}
+
+
+@keyframes rodar1 {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+
+.botao_excluir {
+    font-family: 'poppins', sans-serif;
+    background: #F00;
+    border: 1px solid #FFF;
+    color: #FFF;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao_excluir:hover {
+    border-radius: 0.7rem;
+}
+
+
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+
+.mainbox {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin: 2rem;
+}
+
+.mainbox:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background: url(../assets/arrow.png) no-repeat;
+    background-size: auto;
+    background-size: 100%;
+    left: 20%;
+    top: 45%;
+    z-index: 2;
+    animation-name: bound;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bound {
+    0% {
+        left: 97%;
+    }
+
+    50% {
+        left: 99%;
+    }
+
+    100% {
+        left: 97%;
+    }
+}
+
+
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid whitesmoke;
+    overflow: hidden;
+    transition: all ease-in-out 5s;
+    transform: rotate(90deg);
+
+}
+
+span {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+.span1 {
+    clip-path: polygon(0 17%, 0 50%, 50% 50%);
+    background-color: #E30016;
+}
+
+.span2 {
+    clip-path: polygon(0 17%, 30% 0, 50% 50%);
+    background-color: #0097E3;
+}
+
+.span3 {
+    clip-path: polygon(30% 0, 71% 0%, 50% 50%);
+    background-color: #00DB00;
+}
+
+.span4 {
+    clip-path: polygon(71% 0, 100% 18%, 50% 50%);
+    background-color: #E3DB00;
+}
+
+.span5 {
+    clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
+    background-color: #E300FF;
+}
+
+.box2 .span3 {
+    background-color: #6717E3;
+}
+
+.box2 {
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+
+.box2 .span1 {
+    background-color: #333;
+}
+
+.font {
+    color: #fff;
+
+}
+
+.font h5 {
+    font-family: 'poppins', sans-serif;
+    font-size: 20px;
+}
+
+
+/*Faz aparecer os textos na roleta*/
+.box1 .span1 h5 {
+    position: absolute;
+    top: 40%;
+    right: 72%;
+    transform: rotate(196deg);
+
+}
+
+.box1 .span2 h5 {
+    position: absolute;
+    top: 23%;
+    right: 61%;
+    transform: rotate(-130deg);
+
+}
+
+.box1 .span3 h5 {
+    position: absolute;
+    top: 14%;
+    right: 40%;
+    transform: rotate(-90deg);
+}
+
+.box1 .span4 h5 {
+    position: absolute;
+    top: 20%;
+    right: 17%;
+    transform: rotate(-48deg);
+
+}
+
+.box1 .span5 h5 {
+    position: absolute;
+    top: 34%;
+    right: 3%;
+    transform: rotate(-17deg);
+}
+
+.box2 .span1 h5 {
+    position: absolute;
+    top: 39%;
+    right: 73%;
+    transform: rotate(199deg);
+}
+
+.box2 .span2 h5 {
+    position: absolute;
+    top: 23%;
+    right: 61%;
+    transform: rotate(-130deg);
+}
+
+.box2 .span3 h5 {
+    position: absolute;
+    top: 14%;
+    right: 40%;
+    transform: rotate(270deg);
+
+}
+
+.box2 .span4 h5 {
+    position: absolute;
+    top: 18%;
+    right: 16%;
+    transform: rotate(310deg);
+
+}
+
+.box2 .span5 h5 {
+    position: absolute;
+    top: 34%;
+    right: 4%;
+    transform: rotate(-20deg);
+}
+
+.main.animate:after {
+    animation: animateArroz 0.7s ease infinite;
+}
+
+audio {
+    display: none;
+}
+
+.div_textarea {
+    width: 200px;
+    height: 400px;
+    margin: 2rem;
+}
+
+textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #FFF;
+    resize: none;
+    font-family: 'poppins', sans-serif;
+    font-size: 12pt;
+    width: inherit;
+    height: inherit;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+textarea#story {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: 0px none transparent;
+}
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.div_textarea {
+    text-align: center;
+}
+
+.font h5 {
+    height: 29px;
+    max-height: 29px;
+    width: 130px;
+    text-align: left;
+}
